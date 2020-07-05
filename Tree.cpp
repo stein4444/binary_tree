@@ -1,5 +1,7 @@
 #include "Tree.h"
 
+
+
 void Tree::Add(int value)
 {
 	Add(value, root);

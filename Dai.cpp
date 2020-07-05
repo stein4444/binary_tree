@@ -1,15 +1,16 @@
 #include "Dai.h"
 
-void DAI::Add(string carNumb, string violation, Node*& root)
+void DAI::AddNew(string carNumb, string violation, Node*& root)
 {
 	if (root == nullptr) {
 		root = new Node(carNumb, violation);
 		return;
 	}
 	if (carNumb > root->carNumb)
-		Add(carNumb, violation, root->right);
+		AddNew(carNumb, violation, root->right);
 	else
-		Add(carNumb, violation, root->left);
+		AddNew(carNumb, violation, root->left);
+
 }
 
 void DAI::PrintKLP(Node* elem) const
@@ -18,7 +19,7 @@ void DAI::PrintKLP(Node* elem) const
 	{
 		cout << elem->carNumb << "\n" << elem->violation << ", ";
 		PrintKLP(elem->left);
-		PrintKLP(elem->right); 
+		PrintKLP(elem->right);
 		cout << std::endl;
 
 	}
@@ -36,9 +37,10 @@ string DAI::Seach(string carNumb, Node* root) const
 		return root->violation;
 }
 
-void DAI::Add(string carNumb, string violation)
+void DAI::AddNew(string carNumb, string violation)
 {
-	Add(carNumb, violation, root);
+	AddNew(carNumb, violation, root);
+
 }
 
 void DAI::PrintKLP() const
@@ -49,4 +51,24 @@ void DAI::PrintKLP() const
 string DAI::Seearch(string carNumb) const
 {
 	return Seach(carNumb, root);
+}
+
+void DAI::Add(string violation)
+{
+	Add(root, violation);
+}
+
+void DAI::Add(Node* root, string violation)
+{
+	if (root == nullptr) {
+		root = new Node(root->carNumb,root->violation);
+		return;
+	}
+	if (violation < root->carNumb)
+		Add(root->left, violation);
+	else
+		Add(root->right, violation);
+
+
+
 }

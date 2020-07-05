@@ -12,6 +12,7 @@ struct Node
 	Node* right;
 	Node(int value, Node* left = nullptr, Node* right = nullptr) :
 		value(value),left(left), right(right){}
+	Node(){}
 };
 	Node* root;
 	
@@ -22,12 +23,14 @@ struct Node
 	bool Find(Node* elem, int data);
 	
 public:
+	
 	Tree() : root(nullptr) {}
 	void Add(int value);
 	void PrintKLP()const;
 	void PrintLKP() const;
 	void PrintPKL() const;
 	void Find(int data);
+
 	~Tree();
 	
 };
