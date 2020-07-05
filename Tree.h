@@ -1,6 +1,10 @@
 #pragma once
 #include<iostream>
 using std::cout;
+
+class Tree
+{
+private:
 struct Node
 {
 	int value;
@@ -9,10 +13,6 @@ struct Node
 	Node(int value, Node* left = nullptr, Node* right = nullptr) :
 		value(value),left(left), right(right){}
 };
-
-class Tree
-{
-private:
 	Node* root;
 	
 	void Add(int value, Node*& root);

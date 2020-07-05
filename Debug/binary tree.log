@@ -1,0 +1,3 @@
+﻿  Dai.cpp
+E:\hm\binary tree\Dai.cpp(37): warning C4715: 'DAI::Seach': not all control paths return a value
+  binary tree.vcxproj -> E:\hm\binary tree\Debug\binary tree.exe
