@@ -1,6 +1,5 @@
 #include<iostream>
-using namespace std;
-
+#include"Tree.h"
 int main()
 {
 
